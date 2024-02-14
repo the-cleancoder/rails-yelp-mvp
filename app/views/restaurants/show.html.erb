@@ -1,0 +1,18 @@
+<h1><%= @restaurant.name %><h1>
+
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<ul class="item-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <h4>rating: <%= review.rating %> / 5 </h4>
+      <p><%= review.content %></p>
+    </li>
+  <% end %>
+</ul>
+
+<div class="container w-50 mx-auto" >
+  <h3>Add a review</h3>
+  <%= render 'restaurants/form' %>
+
+</div>
